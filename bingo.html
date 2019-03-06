@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>BINGO!</title>
+	<link rel='stylesheet' type='text/css' href="bingo.css">
+	<script src="bingo.js" type="text/javascript"></script>
+</head>
+
+<body onload='randomNum()'>
+	<h1>Let's play BINGO!</h1>
+
+	<div id = 'goalSelect'>
+		<p>Select winning condition:</p>
+		<input type="radio" id='goalSingle' name="goal" value="single" checked>Single line<br>
+		<input type="radio" id='goalFull' name="goal" value="full">Full board
+	</div>
+
+	<div id = 'bingoBoard'>
+		<table>
+			<tr>
+				<th>B</th>
+				<th>I</th>
+				<th>N</th>
+				<th>G</th>
+				<th>O</th>
+			</tr>
+			<tr>
+				<td id='cell1' onclick='highlightCell("cell1")'>&nbsp;</td>
+				<td id='cell6' onclick='highlightCell("cell6")'>&nbsp;</td>
+				<td id='cell11' onclick='highlightCell("cell11")'>&nbsp;</td>
+				<td id='cell15' onclick='highlightCell("cell15")'>&nbsp;</td>
+				<td id='cell20' onclick='highlightCell("cell20")'>&nbsp;</td>
+			</tr>
+			<tr>
+				<td id='cell2' onclick='highlightCell("cell2")'>&nbsp;</td>
+				<td id='cell7' onclick='highlightCell("cell7")'>&nbsp;</td>
+				<td id='cell12' onclick='highlightCell("cell12")'>&nbsp;</td>
+				<td id='cell16' onclick='highlightCell("cell16")'>&nbsp;</td>
+				<td id='cell21' onclick='highlightCell("cell21")'>&nbsp;</td>
+			</tr>
+			<tr>
+				<td id='cell3' onclick='highlightCell("cell3")'>&nbsp;</td>
+				<td id='cell8' onclick='highlightCell("cell8")'>&nbsp;</td>
+				<td id='freeCell'>Free</td>
+				<td id='cell17' onclick='highlightCell("cell17")'>&nbsp;</td>
+				<td id='cell22' onclick='highlightCell("cell22")'>&nbsp;</td>
+			</tr>
+			<tr>
+				<td id='cell4' onclick='highlightCell("cell4")'>&nbsp;</td>
+				<td id='cell9' onclick='highlightCell("cell9")'>&nbsp;</td>
+				<td id='cell13' onclick='highlightCell("cell13")'>&nbsp;</td>
+				<td id='cell18' onclick='highlightCell("cell18")'>&nbsp;</td>
+				<td id='cell23' onclick='highlightCell("cell23")'>&nbsp;</td>
+			</tr>
+			<tr>
+				<td id='cell5' onclick='highlightCell("cell5")'>&nbsp;</td>
+				<td id='cell10' onclick='highlightCell("cell10")'>&nbsp;</td>
+				<td id='cell14' onclick='highlightCell("cell14")'>&nbsp;</td>
+				<td id='cell19' onclick='highlightCell("cell19")'>&nbsp;</td>
+				<td id='cell24' onclick='highlightCell("cell24")'>&nbsp;</td>
+			</tr>
+		</table>
+	</div>
+
+	<div id='displayNum'>
+		<p>New number:</p>
+		<p id='numCall'>&nbsp;</p>
+	</div>
+
+	<div id = 'buttons'>
+		<button onclick='numCaller()'>Generate a number</button>
+		<button onclick='checkBingoMethod()'>BINGO!</button>
+		<button onclick='resetBoard(); randomNum();'>Get a new card</button>
+	</div>
+
+
+</body>
+</html>
